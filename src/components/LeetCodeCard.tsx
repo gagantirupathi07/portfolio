@@ -66,8 +66,8 @@ const LeetCodeCard = () => {
   }, [loadStats])
 
   return (
-    <article className="group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-[#1C1823] transition-all duration-500 hover:-translate-y-1 hover:border-[#A08AC2]/30 hover:bg-[#211C29] hover:shadow-[0_20px_50px_rgba(160,138,194,0.07)]">
-      
+    <article className="group relative overflow-hidden rounded-3xl border border-[#A5B5A7]/70 bg-[#E8EDE7] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#84A98C] hover:shadow-xl">
+
       {/* LeetCode Banner */}
       <div className="relative h-48 w-full overflow-hidden">
         <img
@@ -76,8 +76,8 @@ const LeetCodeCard = () => {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        {/* Dark Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1823] via-[#1C1823]/20 to-transparent" />
+        {/* Sage Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#E8EDE7] via-[#E8EDE7]/20 to-transparent" />
       </div>
 
       {/* Card Content */}
@@ -85,8 +85,8 @@ const LeetCodeCard = () => {
 
         {/* Icon + Status */}
         <div className="-mt-7 relative flex items-center justify-between">
-          
-          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-[#1C1823] bg-[#A08AC2]/10 text-[#A08AC2]">
+
+          <div className="flex h-14 w-14 items-center justify-center rounded-2xl border-4 border-[#E8EDE7] bg-[#527A5B] text-white shadow-md">
             <Code2 size={22} />
           </div>
 
@@ -94,39 +94,39 @@ const LeetCodeCard = () => {
             {loading && (
               <RefreshCw
                 size={14}
-                className="animate-spin text-[#A08AC2]"
+                className="animate-spin text-[#527A5B]"
               />
             )}
 
-            <span className="rounded-full border border-[#A08AC2]/15 bg-[#A08AC2]/[0.04] px-3 py-1 text-xs text-[#C4B5D9]">
+            <span className="rounded-full border border-[#A5B5A7] bg-[#84A98C]/15 px-3 py-1 text-xs font-medium text-[#527A5B]">
               Coding
             </span>
           </div>
         </div>
 
         {/* Heading */}
-        <p className="mt-6 text-xs font-medium uppercase tracking-[0.25em] text-[#A08AC2]/70">
+        <p className="mt-6 text-xs font-semibold uppercase tracking-[0.25em] text-[#527A5B]">
           LeetCode
         </p>
 
-        <h3 className="mt-3 text-2xl font-semibold text-white">
+        <h3 className="mt-3 text-2xl font-semibold text-[#26352B]">
           Gagan Tirupathi
         </h3>
 
-        <p className="mt-2 text-sm text-[#77717D]">
+        <p className="mt-2 text-sm text-[#6B786D]">
           @{LEETCODE_USERNAME}
         </p>
 
         {/* Error */}
         {error && !stats ? (
-          <div className="mt-7 rounded-2xl border border-white/[0.07] bg-[#100E14]/50 p-5">
-            <p className="text-sm text-white/60">
+          <div className="mt-7 rounded-2xl border border-[#A5B5A7]/70 bg-[#F5F7F3] p-5">
+            <p className="text-sm text-[#4D5B50]">
               Unable to load LeetCode statistics right now.
             </p>
 
             <button
               onClick={loadStats}
-              className="mt-3 text-sm text-[#A08AC2] transition-colors hover:text-[#C4B5D9]"
+              className="mt-3 text-sm font-medium text-[#527A5B] transition-colors hover:text-[#6B9474]"
             >
               Try again
             </button>
@@ -135,47 +135,47 @@ const LeetCodeCard = () => {
           <>
             {/* Total Solved */}
             <div className="mt-7">
-              <p className="text-4xl font-bold text-white">
+              <p className="text-4xl font-bold text-[#26352B]">
                 {stats?.totalSolved ?? "—"}
               </p>
 
-              <p className="mt-1 text-sm text-[#77717D]">
+              <p className="mt-1 text-sm text-[#6B786D]">
                 Problems Solved
               </p>
             </div>
 
             {/* Difficulty Stats */}
             <div className="mt-6 grid grid-cols-3 gap-3">
-              
+
               {/* Easy */}
-              <div className="rounded-2xl border border-white/[0.07] bg-[#100E14]/50 p-4">
-                <p className="text-lg font-semibold text-white">
+              <div className="rounded-2xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-colors duration-300 hover:border-[#84A98C]">
+                <p className="text-lg font-semibold text-[#527A5B]">
                   {stats?.easySolved ?? "—"}
                 </p>
 
-                <p className="mt-1 text-xs text-[#77717D]">
+                <p className="mt-1 text-xs text-[#4D5B50]">
                   Easy
                 </p>
               </div>
 
               {/* Medium */}
-              <div className="rounded-2xl border border-white/[0.07] bg-[#100E14]/50 p-4">
-                <p className="text-lg font-semibold text-white">
+              <div className="rounded-2xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-colors duration-300 hover:border-[#84A98C]">
+                <p className="text-lg font-semibold text-[#527A5B]">
                   {stats?.mediumSolved ?? "—"}
                 </p>
 
-                <p className="mt-1 text-xs text-[#77717D]">
+                <p className="mt-1 text-xs text-[#4D5B50]">
                   Medium
                 </p>
               </div>
 
               {/* Hard */}
-              <div className="rounded-2xl border border-white/[0.07] bg-[#100E14]/50 p-4">
-                <p className="text-lg font-semibold text-white">
+              <div className="rounded-2xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-colors duration-300 hover:border-[#84A98C]">
+                <p className="text-lg font-semibold text-[#527A5B]">
                   {stats?.hardSolved ?? "—"}
                 </p>
 
-                <p className="mt-1 text-xs text-[#77717D]">
+                <p className="mt-1 text-xs text-[#4D5B50]">
                   Hard
                 </p>
               </div>
@@ -183,14 +183,14 @@ const LeetCodeCard = () => {
 
             {/* Acceptance Rate */}
             <div className="mt-4">
-              <div className="rounded-2xl border border-white/[0.07] bg-[#100E14]/50 p-4">
-                <p className="text-lg font-semibold text-white">
+              <div className="rounded-2xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-colors duration-300 hover:border-[#84A98C]">
+                <p className="text-lg font-semibold text-[#527A5B]">
                   {stats
                     ? `${stats.acceptanceRate.toFixed(1)}%`
                     : "—"}
                 </p>
 
-                <p className="mt-1 text-xs text-[#77717D]">
+                <p className="mt-1 text-xs text-[#4D5B50]">
                   Acceptance Rate
                 </p>
               </div>
@@ -204,14 +204,14 @@ const LeetCodeCard = () => {
             href={LEETCODE_PROFILE_URL}
             target="_blank"
             rel="noreferrer"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#A08AC2] transition-colors hover:text-[#C4B5D9]"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-[#527A5B] transition-colors hover:text-[#6B9474]"
           >
             View LeetCode Profile
             <ArrowUpRight size={16} />
           </a>
 
           {lastUpdated && (
-            <span className="text-xs text-[#77717D]">
+            <span className="text-xs text-[#6B786D]">
               Updated{" "}
               {lastUpdated.toLocaleTimeString([], {
                 hour: "2-digit",

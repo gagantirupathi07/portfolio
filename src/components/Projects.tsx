@@ -45,16 +45,19 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="px-6 py-20 lg:px-8 lg:py-24"
+      className="relative overflow-hidden px-6 py-20 lg:px-8 lg:py-24"
     >
-      <div className="mx-auto max-w-7xl">
+      {/* Background Accent */}
+      <div className="pointer-events-none absolute -left-32 top-40 h-80 w-80 rounded-full bg-[#84A98C]/10 blur-3xl" />
+
+      <div className="relative mx-auto max-w-7xl">
         <SectionHeading
           eyebrow="Projects"
           title="Things I've built."
           description="Selected projects focused on practical software engineering and real-world problem solving."
         />
 
-        <div className="grid gap-6 lg:grid-cols-2">
+        <div className="grid items-stretch gap-6 lg:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard
               key={project.title}

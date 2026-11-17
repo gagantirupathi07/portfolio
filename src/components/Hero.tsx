@@ -33,7 +33,7 @@ const Hero = () => {
 
             <span className="text-[#527A5B]">
               Tirupathi{" "}
-              <span className="text-[#84A98C]">
+              <span className="text-[#527A5B]">
                 Gagan
               </span>
             </span>

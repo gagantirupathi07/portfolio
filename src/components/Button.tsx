@@ -1,6 +1,4 @@
-import type {
-  ReactNode,
-} from "react"
+import type { ReactNode } from "react"
 
 interface ButtonProps {
   children: ReactNode
@@ -16,12 +14,12 @@ const Button = ({
   variant = "primary",
 }: ButtonProps) => {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-medium transition-all duration-300"
+    "inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84A98C] focus-visible:ring-offset-2 focus-visible:ring-offset-[#BFC7C5]"
 
   const variantClasses =
     variant === "primary"
-      ? "bg-[#A08AC2] text-[#100E14] hover:bg-[#B59DD0] hover:shadow-[0_0_30px_rgba(160,138,194,0.25)]"
-      : "border border-[#A08AC2]/25 bg-[#A08AC2]/[0.04] text-white hover:border-[#A08AC2]/50 hover:bg-[#A08AC2]/[0.08] hover:text-[#C4B5D9]"
+      ? "bg-[#527A5B] text-white shadow-md shadow-[#527A5B]/15 hover:-translate-y-0.5 hover:bg-[#6B9474] hover:shadow-lg hover:shadow-[#527A5B]/25 active:translate-y-0"
+      : "border border-[#84A98C]/60 bg-[#E8EDE7] text-[#26352B] hover:-translate-y-0.5 hover:border-[#84A98C] hover:bg-[#84A98C]/15 hover:text-[#26352B] active:translate-y-0"
 
   const classes = `${baseClasses} ${variantClasses}`
 

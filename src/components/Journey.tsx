@@ -46,7 +46,8 @@ const Journey = () => {
         />
 
         <div className="relative">
-          <div className="absolute left-5 top-0 hidden h-full w-px bg-gradient-to-b from-[#A08AC2]/50 via-[#A08AC2]/15 to-transparent md:block" />
+          {/* Timeline line */}
+          <div className="absolute left-5 top-0 hidden h-full w-px bg-gradient-to-b from-[#84A98C]/70 via-[#84A98C]/30 to-transparent md:block" />
 
           <div className="space-y-8">
             {journeyItems.map((item) => {
@@ -57,22 +58,24 @@ const Journey = () => {
                   key={`${item.year}-${item.title}`}
                   className="relative grid gap-5 md:grid-cols-[140px_1fr] md:gap-10"
                 >
+                  {/* Year and Icon */}
                   <div className="flex items-center gap-4">
-                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#A08AC2]/30 bg-[#100E14] text-[#A08AC2] shadow-[0_0_20px_rgba(160,138,194,0.08)] md:absolute md:left-0">
+                    <div className="relative z-10 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-[#A5B5A7] bg-[#E8EDE7] text-[#527A5B] shadow-sm transition-all duration-300 hover:border-[#527A5B] hover:bg-[#84A98C] hover:text-white md:absolute md:left-0">
                       <Icon size={18} />
                     </div>
 
-                    <span className="text-sm font-medium uppercase tracking-[0.2em] text-[#A08AC2]/70 md:pl-16">
+                    <span className="text-sm font-semibold uppercase tracking-[0.2em] text-[#527A5B] md:pl-16">
                       {item.year}
                     </span>
                   </div>
 
-                  <div className="rounded-3xl border border-white/[0.08] bg-[#1C1823] p-7 transition-all duration-300 hover:border-[#A08AC2]/25 hover:bg-[#211C29] md:ml-10">
-                    <h3 className="text-xl font-semibold text-white">
+                  {/* Journey Card */}
+                  <div className="rounded-3xl border border-[#A5B5A7]/70 bg-[#E8EDE7] p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#84A98C] hover:shadow-lg md:ml-10">
+                    <h3 className="text-xl font-semibold text-[#26352B]">
                       {item.title}
                     </h3>
 
-                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#B8B3BD]">
+                    <p className="mt-3 max-w-3xl text-sm leading-7 text-[#4D5B50]">
                       {item.description}
                     </p>
                   </div>

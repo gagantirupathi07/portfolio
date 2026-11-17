@@ -4,7 +4,8 @@ import collegeBanner from "../assets/college-banner.jpg"
 
 const ProfileCard = () => {
   return (
-    <article className="group overflow-hidden rounded-2xl border border-white/[0.06] bg-[#1C1823] transition-all duration-300 hover:border-[#A08AC2]/25 hover:bg-[#211C29]">
+    <article className="group overflow-hidden rounded-2xl border border-[#A5B5A7]/70 bg-[#E8EDE7] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#84A98C] hover:shadow-xl">
+
       {/* College Banner */}
       <div className="relative h-48 w-full overflow-hidden">
         <img
@@ -13,14 +14,15 @@ const ProfileCard = () => {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        {/* Dark overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1823] via-[#1C1823]/20 to-transparent" />
+        {/* Sage Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#E8EDE7] via-[#E8EDE7]/20 to-transparent" />
       </div>
 
       {/* College Content */}
       <div className="relative px-6 pb-6">
+
         {/* College Logo */}
-        <div className="-mt-12 relative mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border-4 border-[#1C1823] bg-white shadow-[0_0_30px_rgba(160,138,194,0.15)]">
+        <div className="-mt-12 relative mb-5 flex h-20 w-20 items-center justify-center overflow-hidden rounded-2xl border-4 border-[#E8EDE7] bg-white shadow-md">
           <img
             src={collegeLogo}
             alt="R.V.R. & J.C. College of Engineering logo"
@@ -31,58 +33,59 @@ const ProfileCard = () => {
         {/* Heading */}
         <div className="flex items-start justify-between gap-4">
           <div>
-            <p className="text-xs font-medium uppercase tracking-[0.2em] text-[#A08AC2]">
+            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#527A5B]">
               College
             </p>
 
-            <h3 className="mt-2 text-xl font-semibold leading-tight text-white">
+            <h3 className="mt-2 text-xl font-semibold leading-tight text-[#26352B]">
               R.V.R. & J.C. College of Engineering
             </h3>
 
-            <p className="mt-2 text-sm leading-6 text-white/50">
+            <p className="mt-2 text-sm leading-6 text-[#4D5B50]">
               B.Tech in Computer Science and Engineering — Data Science
             </p>
           </div>
 
-          <div className="hidden shrink-0 rounded-xl border border-[#A08AC2]/15 bg-[#A08AC2]/[0.06] p-3 sm:block">
+          <div className="hidden shrink-0 rounded-xl border border-[#A5B5A7]/70 bg-[#84A98C]/15 p-3 sm:block">
             <GraduationCap
               size={22}
-              className="text-[#A08AC2]"
+              className="text-[#527A5B]"
             />
           </div>
         </div>
 
         {/* Academic Stats */}
-        <div className="mt-7 grid grid-cols-3 gap-4">
+        <div className="mt-7 grid grid-cols-3 gap-3 sm:gap-4">
+
           {/* CGPA */}
-          <div className="rounded-xl border border-white/[0.06] bg-[#16131C] p-5">
-            <p className="text-3xl font-bold text-white">
+          <div className="rounded-xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-all duration-300 hover:border-[#84A98C] sm:p-5">
+            <p className="text-2xl font-bold text-[#527A5B] sm:text-3xl">
               9.03
             </p>
 
-            <p className="mt-1 text-xs text-[#77717D]">
+            <p className="mt-1 text-xs text-[#4D5B50]">
               CGPA / 10
             </p>
           </div>
 
           {/* Year */}
-          <div className="rounded-xl border border-white/[0.06] bg-[#16131C] p-5">
-            <p className="text-3xl font-bold text-white">
+          <div className="rounded-xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-all duration-300 hover:border-[#84A98C] sm:p-5">
+            <p className="text-2xl font-bold text-[#527A5B] sm:text-3xl">
               3rd
             </p>
 
-            <p className="mt-1 text-xs text-[#77717D]">
+            <p className="mt-1 text-xs text-[#4D5B50]">
               Year
             </p>
           </div>
 
           {/* Graduation Year */}
-          <div className="rounded-xl border border-white/[0.06] bg-[#16131C] p-5">
-            <p className="text-3xl font-bold text-white">
+          <div className="rounded-xl border border-[#A5B5A7]/60 bg-[#F5F7F3] p-4 transition-all duration-300 hover:border-[#84A98C] sm:p-5">
+            <p className="text-2xl font-bold text-[#527A5B] sm:text-3xl">
               2028
             </p>
 
-            <p className="mt-1 text-xs text-[#77717D]">
+            <p className="mt-1 text-xs text-[#4D5B50]">
               Graduation
             </p>
           </div>

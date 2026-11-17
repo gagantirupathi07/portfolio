@@ -47,7 +47,7 @@ const SocialLinks = () => {
                 : undefined
             }
             aria-label={link.name}
-            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#A08AC2]/15 bg-[#A08AC2]/[0.03] text-white/50 transition-all duration-300 hover:-translate-y-1 hover:border-[#A08AC2]/40 hover:bg-[#A08AC2]/[0.08] hover:text-[#A08AC2] hover:shadow-[0_8px_25px_rgba(160,138,194,0.12)]"
+            className="flex h-10 w-10 items-center justify-center rounded-full border border-[#A5B5A7]/60 bg-[#E8EDE7] text-[#4D5B50] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#84A98C] hover:bg-[#527A5B] hover:text-white hover:shadow-[0_8px_25px_rgba(82,122,91,0.18)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#84A98C] focus-visible:ring-offset-2"
           >
             <Icon size={17} />
           </a>

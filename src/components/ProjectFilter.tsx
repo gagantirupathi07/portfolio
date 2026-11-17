@@ -18,10 +18,11 @@ const ProjectFilter = ({
           <button
             key={category}
             onClick={() => onChange(category)}
-            className={`rounded-full px-4 py-2 text-sm transition-all duration-300 ${
+            aria-pressed={active}
+            className={`rounded-full border px-4 py-2 text-sm font-medium transition-all duration-300 ${
               active
-                ? "bg-[#A08AC2] text-[#100E14] shadow-[0_0_20px_rgba(160,138,194,0.15)]"
-                : "border border-white/[0.08] bg-[#16131C] text-white/45 hover:border-[#A08AC2]/30 hover:bg-[#1C1823] hover:text-[#C4B5D9]"
+                ? "border-[#527A5B] bg-[#527A5B] text-white shadow-md shadow-[#527A5B]/15"
+                : "border-[#A5B5A7]/70 bg-[#E8EDE7] text-[#4D5B50] hover:border-[#84A98C] hover:bg-[#84A98C]/15 hover:text-[#26352B]"
             }`}
           >
             {category}

@@ -36,20 +36,14 @@ const Contact = () => {
     setSubmitted(false)
     setError("")
 
-    const form =
-      event.currentTarget
-
+    const form = event.currentTarget
     const formData = new FormData(form)
 
     const data = {
       name: String(formData.get("name") || ""),
       email: String(formData.get("email") || ""),
-      subject: String(
-        formData.get("subject") || "",
-      ),
-      message: String(
-        formData.get("message") || "",
-      ),
+      subject: String(formData.get("subject") || ""),
+      message: String(formData.get("message") || ""),
     }
 
     try {
@@ -58,10 +52,7 @@ const Contact = () => {
       setSubmitted(true)
       form.reset()
     } catch (err) {
-      console.error(
-        "Contact form error:",
-        err,
-      )
+      console.error("Contact form error:", err)
 
       setError(
         err instanceof Error
@@ -72,6 +63,12 @@ const Contact = () => {
       setIsSubmitting(false)
     }
   }
+
+  const inputClasses =
+    "w-full rounded-2xl border border-[#A5B5A7]/60 bg-[#F5F7F3] px-4 py-3.5 text-sm text-[#26352B] outline-none transition-all duration-300 placeholder:text-[#78877A]/70 focus:border-[#84A98C] focus:bg-white focus:ring-2 focus:ring-[#84A98C]/15 disabled:cursor-not-allowed disabled:opacity-50"
+
+  const labelClasses =
+    "mb-2 block text-sm font-medium text-[#26352B]"
 
   return (
     <section
@@ -86,54 +83,59 @@ const Contact = () => {
         />
 
         <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr]">
+
+          {/* Contact Information */}
           <div className="space-y-4">
+
             <a
               href={`mailto:${CONTACT_EMAIL}`}
-              className="group block rounded-3xl border border-white/[0.08] bg-[#1C1823] p-7 transition-all duration-300 hover:border-[#A08AC2]/25 hover:bg-[#211C29]"
+              className="group block rounded-3xl border border-[#A5B5A7]/60 bg-[#E8EDE7] p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#84A98C] hover:bg-white hover:shadow-lg hover:shadow-[#84A98C]/15"
             >
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#A08AC2]/20 bg-[#A08AC2]/[0.05] text-[#A08AC2] transition-colors group-hover:bg-[#A08AC2]/10">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#84A98C]/40 bg-[#84A98C]/15 text-[#527A5B] transition-all duration-300 group-hover:bg-[#84A98C]/25">
                 <Mail size={19} />
               </div>
 
-              <h3 className="mt-5 text-lg font-semibold text-white">
+              <h3 className="mt-5 text-lg font-semibold text-[#26352B]">
                 Email
               </h3>
 
-              <p className="mt-2 text-sm leading-6 text-[#77717D]">
+              <p className="mt-2 text-sm leading-6 text-[#4D5B50]">
                 Available for opportunities,
                 collaborations, and technical
                 discussions.
               </p>
 
-              <p className="mt-4 text-sm text-[#A08AC2] transition-colors group-hover:text-[#C4B5D9]">
+              <p className="mt-4 break-all text-sm font-medium text-[#527A5B] transition-colors group-hover:text-[#6B9474]">
                 {CONTACT_EMAIL}
               </p>
             </a>
 
-            <div className="rounded-3xl border border-white/[0.08] bg-[#1C1823] p-7">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#A08AC2]/20 bg-[#A08AC2]/[0.05] text-[#A08AC2]">
+            <div className="rounded-3xl border border-[#A5B5A7]/60 bg-[#E8EDE7] p-7 shadow-sm transition-all duration-300 hover:border-[#84A98C]">
+              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#84A98C]/40 bg-[#84A98C]/15 text-[#527A5B]">
                 <MapPin size={19} />
               </div>
 
-              <h3 className="mt-5 text-lg font-semibold text-white">
+              <h3 className="mt-5 text-lg font-semibold text-[#26352B]">
                 Location
               </h3>
 
-              <p className="mt-2 text-sm leading-6 text-[#77717D]">
+              <p className="mt-2 text-sm leading-6 text-[#4D5B50]">
                 Andhra Pradesh, India
               </p>
             </div>
           </div>
 
+          {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="rounded-3xl border border-white/[0.08] bg-[#1C1823] p-7 sm:p-9"
+            className="rounded-3xl border border-[#A5B5A7]/60 bg-[#E8EDE7] p-7 shadow-sm sm:p-9"
           >
             <div className="grid gap-6 sm:grid-cols-2">
+
               <div>
                 <label
                   htmlFor="name"
-                  className="mb-2 block text-sm text-white/50"
+                  className={labelClasses}
                 >
                   Name
                 </label>
@@ -145,14 +147,14 @@ const Contact = () => {
                   required
                   disabled={isSubmitting}
                   placeholder="Your name"
-                  className="w-full rounded-2xl border border-white/10 bg-[#100E14]/70 px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/20 focus:border-[#A08AC2]/40 disabled:cursor-not-allowed disabled:opacity-50"
+                  className={inputClasses}
                 />
               </div>
 
               <div>
                 <label
                   htmlFor="email"
-                  className="mb-2 block text-sm text-white/50"
+                  className={labelClasses}
                 >
                   Email
                 </label>
@@ -164,15 +166,16 @@ const Contact = () => {
                   required
                   disabled={isSubmitting}
                   placeholder="you@example.com"
-                  className="w-full rounded-2xl border border-white/10 bg-[#100E14]/70 px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/20 focus:border-[#A08AC2]/40 disabled:cursor-not-allowed disabled:opacity-50"
+                  className={inputClasses}
                 />
               </div>
+
             </div>
 
             <div className="mt-6">
               <label
                 htmlFor="subject"
-                className="mb-2 block text-sm text-white/50"
+                className={labelClasses}
               >
                 Subject
               </label>
@@ -184,14 +187,14 @@ const Contact = () => {
                 required
                 disabled={isSubmitting}
                 placeholder="What would you like to discuss?"
-                className="w-full rounded-2xl border border-white/10 bg-[#100E14]/70 px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/20 focus:border-[#A08AC2]/40 disabled:cursor-not-allowed disabled:opacity-50"
+                className={inputClasses}
               />
             </div>
 
             <div className="mt-6">
               <label
                 htmlFor="message"
-                className="mb-2 block text-sm text-white/50"
+                className={labelClasses}
               >
                 Message
               </label>
@@ -203,14 +206,15 @@ const Contact = () => {
                 disabled={isSubmitting}
                 rows={6}
                 placeholder="Write your message..."
-                className="w-full resize-none rounded-2xl border border-white/10 bg-[#100E14]/70 px-4 py-3.5 text-sm text-white outline-none transition-colors placeholder:text-white/20 focus:border-[#A08AC2]/40 disabled:cursor-not-allowed disabled:opacity-50"
+                className={`${inputClasses} resize-none`}
               />
             </div>
 
+            {/* Submit Button */}
             <button
               type="submit"
               disabled={isSubmitting}
-              className="mt-6 inline-flex items-center justify-center rounded-full bg-[#A08AC2] px-6 py-3 text-sm font-medium text-[#100E14] transition-all duration-300 hover:bg-[#B59DD0] hover:shadow-[0_0_25px_rgba(160,138,194,0.2)] disabled:cursor-not-allowed disabled:opacity-60"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-[#527A5B] px-7 py-3.5 text-sm font-semibold text-white shadow-md shadow-[#527A5B]/15 transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#6B9474] hover:shadow-lg hover:shadow-[#527A5B]/25 active:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isSubmitting ? (
                 <>
@@ -239,19 +243,22 @@ const Contact = () => {
               )}
             </button>
 
+            {/* Success Message */}
             {submitted && (
-              <p className="mt-4 flex items-center gap-2 text-sm text-[#A08AC2]">
+              <p className="mt-4 flex items-center gap-2 text-sm font-medium text-[#527A5B]">
                 <CheckCircle2 size={16} />
                 Message sent successfully. I'll get
                 back to you soon.
               </p>
             )}
 
+            {/* Error Message */}
             {error && (
-              <p className="mt-4 text-sm text-red-300">
+              <p className="mt-4 text-sm font-medium text-red-700">
                 {error}
               </p>
             )}
+
           </form>
         </div>
       </div>

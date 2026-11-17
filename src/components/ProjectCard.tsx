@@ -27,16 +27,19 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
         />
 
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1C1823] via-transparent to-transparent" />
+        {/* Image Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#E8EDE7] via-transparent to-transparent" />
 
+        {/* Project Status */}
         {project.status && (
-          <span className="absolute left-5 top-5 rounded-full border border-[#A08AC2]/20 bg-[#100E14]/80 px-3 py-1 text-xs font-medium text-[#C4B5D9] backdrop-blur-md">
+          <span className="absolute left-5 top-5 rounded-full border border-[#A5B5A7] bg-[#E8EDE7]/95 px-3 py-1 text-xs font-semibold text-[#527A5B] shadow-sm backdrop-blur-md">
             {project.status}
           </span>
         )}
 
+        {/* Featured Badge */}
         {project.featured && (
-          <span className="absolute right-5 top-5 rounded-full border border-[#A08AC2]/20 bg-[#100E14]/80 px-3 py-1 text-xs font-medium text-[#C4B5D9] backdrop-blur-md">
+          <span className="absolute right-5 top-5 rounded-full border border-[#A5B5A7] bg-[#E8EDE7]/95 px-3 py-1 text-xs font-semibold text-[#527A5B] shadow-sm backdrop-blur-md">
             Featured
           </span>
         )}
@@ -45,33 +48,35 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
       {/* Content */}
       <div className="p-6">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="text-2xl font-semibold text-white">
+          <h3 className="text-2xl font-semibold text-[#26352B]">
             {project.title}
           </h3>
 
           <ArrowUpRight
             size={20}
-            className="shrink-0 text-[#A08AC2] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
+            className="shrink-0 text-[#527A5B] transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1"
           />
         </div>
 
-        <p className="mt-4 text-sm leading-7 text-white/50">
+        <p className="mt-4 text-sm leading-7 text-[#4D5B50]">
           {project.description}
         </p>
 
+        {/* Technologies */}
         <div className="mt-6 flex flex-wrap gap-2">
           {project.technologies.map((technology) => (
             <span
               key={technology}
-              className="rounded-full border border-[#A08AC2]/15 bg-[#A08AC2]/[0.04] px-3 py-1.5 text-xs text-[#C4B5D9]"
+              className="rounded-full border border-[#A5B5A7]/70 bg-[#F5F7F3] px-3 py-1.5 text-xs font-medium text-[#527A5B] transition-colors duration-300 group-hover:border-[#84A98C]"
             >
               {technology}
             </span>
           ))}
         </div>
 
+        {/* GitHub Link Indicator */}
         {project.githubUrl && (
-          <div className="mt-6 flex items-center gap-2 text-sm text-white/50">
+          <div className="mt-6 flex items-center gap-2 text-sm font-medium text-[#527A5B]">
             <FaGithub size={16} />
             <span>View on GitHub</span>
           </div>
@@ -86,7 +91,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
         href={project.githubUrl}
         target="_blank"
         rel="noreferrer"
-        className="group block overflow-hidden rounded-3xl border border-white/[0.06] bg-[#1C1823] transition-all duration-500 hover:-translate-y-1 hover:border-[#A08AC2]/25 hover:bg-[#211C29] hover:shadow-[0_20px_50px_rgba(160,138,194,0.07)]"
+        className="group block overflow-hidden rounded-3xl border border-[#A5B5A7]/70 bg-[#E8EDE7] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#84A98C] hover:shadow-xl"
       >
         {cardContent}
       </a>
@@ -94,7 +99,7 @@ const ProjectCard = ({ project }: ProjectCardProps) => {
   }
 
   return (
-    <article className="group overflow-hidden rounded-3xl border border-white/[0.06] bg-[#1C1823] transition-all duration-500 hover:-translate-y-1 hover:border-[#A08AC2]/25 hover:bg-[#211C29] hover:shadow-[0_20px_50px_rgba(160,138,194,0.07)]">
+    <article className="group overflow-hidden rounded-3xl border border-[#A5B5A7]/70 bg-[#E8EDE7] shadow-sm transition-all duration-500 hover:-translate-y-1 hover:border-[#84A98C] hover:shadow-xl">
       {cardContent}
     </article>
   )
